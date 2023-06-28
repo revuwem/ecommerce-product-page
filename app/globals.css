@@ -1,3 +1,17 @@
+:root {
+  /* Style Guide Colors */
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --very-dark-grayish-blue: hsl(220, 13%, 13%);
+
+  --primary: hsl(26, 100%, 55%);
+  --primary-light: hsl(25, 100%, 94%);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -7,4 +21,9 @@
 html,
 body {
   min-height: 100vh;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr minmax(max-content, 1120px) 1fr;
 }
