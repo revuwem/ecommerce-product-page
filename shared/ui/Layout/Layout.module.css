@@ -1,0 +1,5 @@
+.layout {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
