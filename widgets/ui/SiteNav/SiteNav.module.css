@@ -1,0 +1,22 @@
+.navList {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fill, minmax(0, max-content));
+  height: 110px;
+}
+
+.navItem {
+  color: var(--dark-grayish-blue);
+  height: 110px;
+  padding: 0 12px;
+  display: grid;
+  place-items: center;
+  transition: color 0.3s ease-out;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  color: var(--very-dark-grayish-blue);
+  box-shadow: 0 4px 0 0 var(--primary);
+}
