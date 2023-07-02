@@ -1,0 +1,8 @@
+.header {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content min-content;
+  align-items: center;
+  gap: 48px;
+  box-shadow: 0 1px 0 var(--grayish-blue);
+  padding-bottom: 3px;
+}
