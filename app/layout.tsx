@@ -1,6 +1,9 @@
 import React from "react";
 import "./globals.css";
 import { Kumbh_Sans as KumbhSans } from "next/font/google";
+import { Layout } from "@/shared/ui";
+import { Cart, LayoutHeader, SiteNav } from "@/widgets/ui";
+import UserProfile from "@/widgets/ui/UserProfile/UserProfile";
 
 const kumbhSans = KumbhSans({ subsets: ["latin"] });
 
@@ -16,7 +19,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={kumbhSans.className}>{children}</body>
+      <body className={kumbhSans.className}>
+        <Layout
+          headerSlot={
+            <LayoutHeader
+              navSlot={<SiteNav />}
+              cartSlot={<Cart />}
+              userProfileSlot={<UserProfile />}
+            />
+          }
+        >
+          {children}
+        </Layout>
+      </body>
     </html>
   );
 }
