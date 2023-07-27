@@ -1,5 +1,6 @@
 import React from "react";
 import { ProductDetailsT } from "@/entities/product";
+import styles from "./ProductDetails.module.css";
 
 type Props = {
   data: ProductDetailsT;
@@ -9,23 +10,28 @@ const ProductDetails: React.FC<Props> = ({ data }) => {
   const { brand, name, description, price, oldPrice, discount, currency } =
     data;
   return (
-    <div>
-      <h2>{brand}</h2>
-      <h3>{name}</h3>
-      <p>{description}</p>
-      <p>
-        <span>
-          {currency}
-          {price}
-        </span>
-        <span>{discount}%</span>
-      </p>
-      <p>
-        <s>
-          {currency}
-          {oldPrice}
-        </s>
-      </p>
+    <div className={styles.layout}>
+      <div className={styles.container}>gallery</div>
+      <div className={styles.container}>
+        <h2 className={styles.brand}>{brand}</h2>
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.description}>{description}</p>
+        <p className={styles.price}>
+          <span>
+            {currency}
+            {price.toFixed(2)}
+          </span>
+          <span className={styles.discount}>{discount}%</span>
+        </p>
+        <p className={styles.oldPrice}>
+          <span>
+            <s>
+              {currency}
+              {oldPrice.toFixed(2)}
+            </s>
+          </span>
+        </p>
+      </div>
     </div>
   );
 };
