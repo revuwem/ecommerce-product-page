@@ -1,4 +1,4 @@
 import Layout from "./Layout/Layout";
+import Button from "./Button/Button";
 
-// eslint-disable-next-line import/prefer-default-export
-export { Layout };
+export { Layout, Button };
