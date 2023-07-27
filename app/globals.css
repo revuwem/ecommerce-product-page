@@ -11,8 +11,11 @@
   --color-primary: hsl(26, 100%, 55%);
   --color-primary-light: hsl(25, 100%, 94%);
 
-  --primary: hsl(26, 100%, 55%);
-  --primary-light: hsl(25, 100%, 94%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 * {
