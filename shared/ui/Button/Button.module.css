@@ -2,18 +2,29 @@
   font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-white);
-  padding: 1rem 2.5rem;
+
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background-color: var(--color-primary);
+
   border: none;
   border-radius: 0.5em;
   outline: none;
-  box-shadow: 0 1.25rem 1.5rem var(--color-primary-light);
+
   transition: all 0.3s;
+}
+
+.primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  box-shadow: 0 1.25rem 1.5rem var(--color-primary-light);
+}
+
+.secondary {
+  color: var(--color-primary);
+  background-color: var(--color-light-grayish-blue);
 }
 
 .button:hover {
