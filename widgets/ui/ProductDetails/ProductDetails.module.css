@@ -52,3 +52,9 @@
   color: var(--color-grayish-blue);
   margin-bottom: 2.5rem;
 }
+
+.cartControls {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}

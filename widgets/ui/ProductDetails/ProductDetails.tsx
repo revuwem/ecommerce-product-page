@@ -1,5 +1,6 @@
 import React from "react";
 import { ProductDetailsT } from "@/entities/product";
+import { AddToCartButton, QuantityPicker } from "@/features/cart";
 import styles from "./ProductDetails.module.css";
 
 type Props = {
@@ -31,6 +32,10 @@ const ProductDetails: React.FC<Props> = ({ data }) => {
             </s>
           </span>
         </p>
+        <div className={styles.cartControls}>
+          <QuantityPicker />
+          <AddToCartButton />
+        </div>
       </div>
     </div>
   );
