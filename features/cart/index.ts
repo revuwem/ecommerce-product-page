@@ -1,4 +1,4 @@
 import AddToCartButton from "@/features/cart/AddToCartButton";
+import QuantityPicker from "@/features/cart/QuantityPicker/QuantityPicker";
 
-// eslint-disable-next-line import/prefer-default-export
-export { AddToCartButton };
+export { AddToCartButton, QuantityPicker };

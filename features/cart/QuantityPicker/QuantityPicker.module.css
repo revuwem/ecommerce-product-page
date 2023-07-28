@@ -1,0 +1,14 @@
+.picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.quantity {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-very-dark-grayish-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light-grayish-blue);
+}
