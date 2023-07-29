@@ -1,3 +1,5 @@
+export type ProductImageT = { thumbnail: string; href: string };
+
 export type ProductDetailsT = {
   brand: string;
   name: string;
@@ -7,5 +9,5 @@ export type ProductDetailsT = {
   discount: number;
   currency: "$";
   mainImage?: string | null;
-  images?: string[] | null;
+  images?: ProductImageT[] | null;
 };
