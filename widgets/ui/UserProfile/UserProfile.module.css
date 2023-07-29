@@ -1,0 +1,12 @@
+.container {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.container:hover {
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+}
