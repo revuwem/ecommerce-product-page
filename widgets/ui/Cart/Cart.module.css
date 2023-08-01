@@ -1,0 +1,108 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdownButton {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  min-width: 2rem;
+  padding: 2rem 0;
+}
+
+.dropdownButton:hover {
+  cursor: pointer;
+}
+
+.cartIndicator {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(120%, -120%);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-white);
+  display: block;
+  padding: 0 0.3rem;
+  background-color: var(--color-primary);
+  border-radius: 1rem;
+}
+
+.dropdownMenu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 95%);
+  z-index: 100;
+  width: max-content;
+  padding: 1.5rem 1.7rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-white);
+  box-shadow: 0 0.5rem 1rem var(--color-grayish-blue);
+}
+
+.dropdownMenu h3 {
+  font-size: 1rem;
+}
+
+.divider {
+  width: calc(100% + 1.7rem * 2);
+  height: 1px;
+  margin: 1.5rem -1.7rem;
+  background-color: var(--color-grayish-blue);
+  opacity: 0.5;
+}
+
+.dropdownContent {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.dropdownContent button {
+  box-shadow: none;
+}
+
+.dropdownList {
+  list-style: none;
+}
+
+.cartItem {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+}
+
+.cartItem img {
+  max-width: 3rem;
+  max-height: 3rem;
+  border-radius: 0.5em;
+}
+
+.cartItem h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-dark-grayish-blue);
+  margin-bottom: 0.3em;
+}
+
+.cartItem p {
+  color: var(--color-dark-grayish-blue);
+}
+
+.cartTotal {
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.cartRemoveBtn {
+  background-color: transparent;
+  padding: 0.2rem 0.5rem;
+  color: var(--color-grayish-blue);
+  border: none;
+  border-radius: 0.5em;
+  transition: 0.3s;
+}
+
+.cartRemoveBtn:hover {
+  color: var(--color-dark-grayish-blue);
+}
