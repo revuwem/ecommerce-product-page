@@ -7,7 +7,7 @@
 }
 
 .navItem {
-  color: var(--dark-grayish-blue);
+  color: var(--color-dark-grayish-blue);
   height: 110px;
   padding: 0 12px;
   display: grid;
@@ -17,6 +17,6 @@
 }
 
 .navItem:hover {
-  color: var(--very-dark-grayish-blue);
-  box-shadow: 0 4px 0 0 var(--primary);
+  color: var(--color-very-dark-grayish-blue);
+  box-shadow: 0 4px 0 0 var(--color-primary);
 }
