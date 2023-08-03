@@ -7,8 +7,11 @@ import Image from "next/image";
 import { Button } from "@/shared/ui";
 import imgTumbnail from "../../../public/images/image-product-1-thumbnail.jpg";
 import styles from "./Cart.module.css";
+import { useAppSelector } from "@/shared/lib/hooks";
+import { selectProductsInCartQuantity } from "@/entities/cart/model/slice";
 
 const Cart = () => {
+  const productsInCartQuantity = useAppSelector(selectProductsInCartQuantity);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleDropdown = () => {
@@ -27,7 +30,9 @@ const Cart = () => {
         onClick={() => toggleDropdown()}
       >
         <CartIcon stroke="currentColor" width="1rem" height="1rem" />
-        <span className={styles.cartIndicator}>3</span>
+        {productsInCartQuantity > 0 && (
+          <span className={styles.cartIndicator}>{productsInCartQuantity}</span>
+        )}
       </button>
       {isOpen && (
         <div className={styles.dropdownMenu}>

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { ProductDetailsT } from "@/entities/product";
+import { RootState } from "@/app/store";
 
 type CartItemT = {
   item: ProductDetailsT;
@@ -43,6 +44,9 @@ export const cartSlice = createSlice({
     },
   },
 });
+
+export const selectProductsInCartQuantity = (state: RootState) =>
+  state.cart.products.reduce((qty) => ++qty, 0);
 
 export const {
   addToCart,
