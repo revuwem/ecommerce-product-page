@@ -42,4 +42,10 @@ export const cartSlice = createSlice({
 export const selectProductsInCartQuantity = (state: RootState) =>
   state.cart.products.reduce((qty) => ++qty, 0);
 
+export const selectProductsInCart = (state: RootState) =>
+  state.cart.products.map((product) => ({
+    ...product,
+    total: product.item.price * product.amount,
+  }));
+
 export const { addToCart, removeFromCart } = cartSlice.actions;
