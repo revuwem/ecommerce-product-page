@@ -2,11 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { ProductDetailsT } from "@/entities/product";
 
+type CartItemT = {
+  item: ProductDetailsT;
+  amount: number;
+};
+
 export interface CartState {
-  products: {
-    item: ProductDetailsT;
-    amount: number;
-  }[];
+  products: CartItemT[];
 }
 
 const initialState: CartState = {
@@ -17,7 +19,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state) => {
+    addToCart: (state, action: PayloadAction<CartItemT>) => {
       console.log("added to cart");
     },
     removeFromCart: (state) => {
@@ -40,5 +42,3 @@ export const {
   increaseProductAmount,
   decreaseProductAmount,
 } = cartSlice.actions;
-
-export default cartSlice.reducer;
