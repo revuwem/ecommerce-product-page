@@ -31,8 +31,10 @@ export const cartSlice = createSlice({
         state.products[productInCart].amount = action.payload.amount;
       }
     },
-    removeFromCart: (state) => {
-      console.log("removed from cart");
+    removeFromCart: (state, action: PayloadAction<CartItemT["item"]>) => {
+      state.products = state.products.filter(
+        (product) => product.item.id !== action.payload.id
+      );
     },
   },
 });
