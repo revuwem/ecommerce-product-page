@@ -34,23 +34,10 @@ export const cartSlice = createSlice({
     removeFromCart: (state) => {
       console.log("removed from cart");
     },
-    // TODO: maybe no need for action, just increment the current state
-    increaseProductAmount: (state, action: PayloadAction<number>) => {
-      console.log("amount increased: +", action.payload);
-    },
-    // TODO: maybe no need for action, just decrement the current state
-    decreaseProductAmount: (state, action: PayloadAction<number>) => {
-      console.log("amount decreased: -", action.payload);
-    },
   },
 });
 
 export const selectProductsInCartQuantity = (state: RootState) =>
   state.cart.products.reduce((qty) => ++qty, 0);
 
-export const {
-  addToCart,
-  removeFromCart,
-  increaseProductAmount,
-  decreaseProductAmount,
-} = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;

@@ -1,7 +1,1 @@
-export {
-  cartSlice,
-  addToCart,
-  removeFromCart,
-  increaseProductAmount,
-  decreaseProductAmount,
-} from "./model/slice";
+export { cartSlice, addToCart, removeFromCart } from "./model/slice";
