@@ -1,6 +1,7 @@
 export type ProductImageT = { thumbnail: string; href: string };
 
 export type ProductDetailsT = {
+  id: number;
   brand: string;
   name: string;
   description: string;
