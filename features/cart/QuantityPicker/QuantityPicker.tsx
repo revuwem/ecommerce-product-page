@@ -1,12 +1,16 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import { Button } from "@/shared/ui";
 import PlusIcon from "@/shared/assets/icons/plus.svg";
 import MinusIcon from "@/shared/assets/icons/minus.svg";
-import { useState } from "react";
 import styles from "./QuantityPicker.module.css";
 
-const QuantityPicker = () => {
+type Props = {
+  onChange: (state: number) => void;
+};
+
+const QuantityPicker: React.FC<Props> = ({ onChange }) => {
   const [qty, setQty] = useState<number>(1);
 
   const onDecrease = () => {
@@ -18,6 +22,10 @@ const QuantityPicker = () => {
     if (qty > 99) return;
     setQty(qty + 1);
   };
+
+  useEffect(() => {
+    onChange(qty);
+  }, [qty, onChange]);
 
   return (
     <div className={styles.picker}>

@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useCallback, useState } from "react";
 import { ProductDetailsT } from "@/entities/product";
 import { AddToCartButton, QuantityPicker } from "@/features/cart";
 import Gallery from "@/widgets/ui/Gallery";
@@ -19,6 +21,13 @@ const ProductDetails: React.FC<Props> = ({ data }) => {
     currency,
     images,
   } = data;
+
+  const [productAmount, setProductAmount] = useState<number>(1);
+
+  const onChangeAmount = useCallback((state: number) => {
+    setProductAmount(state);
+  }, []);
+
   return (
     <div className={styles.layout}>
       <div className={styles.container}>
@@ -44,8 +53,8 @@ const ProductDetails: React.FC<Props> = ({ data }) => {
           </span>
         </p>
         <div className={styles.cartControls}>
-          <QuantityPicker />
-          <AddToCartButton />
+          <QuantityPicker onChange={onChangeAmount} />
+          <AddToCartButton item={data} amount={productAmount} />
         </div>
       </div>
     </div>
