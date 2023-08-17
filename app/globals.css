@@ -32,6 +32,7 @@ body {
 body {
   display: grid;
   grid-template-columns: 1fr minmax(auto, 1120px) 1fr;
+  position: relative;
 }
 
 button:hover {
