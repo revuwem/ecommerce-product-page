@@ -1,16 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MenuIcon from "@/shared/assets/icons/menu.svg";
 import CloseIcon from "@/shared/assets/icons/close.svg";
 import styles from "./SiteNav.module.css";
+import { useOnClickOutside } from "usehooks-ts";
 
 const SiteNav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const ref = useRef(null);
 
   const toggleNav = () => {
     setIsOpen((isOpen) => !isOpen);
   };
+
+  const handleClickOutside = () => {
+    if (isOpen) setIsOpen(false);
+  };
+
+  useOnClickOutside(ref, handleClickOutside);
 
   return (
     <>
@@ -23,7 +31,7 @@ const SiteNav = () => {
           <MenuIcon />
         </button>
 
-        <div className={styles.navContent}>
+        <div ref={ref} className={styles.navContent}>
           <button
             aria-label="close nav"
             onClick={toggleNav}
