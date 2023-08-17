@@ -1,22 +1,104 @@
+.nav {
+  position: relative;
+}
+
+.navContent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60vw;
+  height: 100vh;
+  padding: 1rem 1.5rem;
+  background-color: var(--color-white);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+  z-index: 1000;
+}
+
+.nav.open .navContent {
+  transform: translateX(0);
+}
+
+.nav::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-black);
+  opacity: 0.7;
+  z-index: 999;
+}
+
+.nav.open::after {
+  display: block;
+}
+
+.nav.open > * {
+  z-index: 1000;
+}
+
+.toggleButton {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem 0.5rem;
+}
+
 .navList {
   list-style: none;
   display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(auto-fill, minmax(0, max-content));
-  height: 110px;
 }
 
 .navItem {
-  color: var(--color-dark-grayish-blue);
-  height: 110px;
-  padding: 0 12px;
-  display: grid;
-  place-items: center;
+  color: var(--color-very-dark-grayish-blue);
+  font-weight: 700;
+  padding: 1rem 0.5rem;
   transition: color 0.3s ease-out;
   cursor: pointer;
 }
 
-.navItem:hover {
-  color: var(--color-very-dark-grayish-blue);
-  box-shadow: 0 4px 0 0 var(--color-primary);
+@media (min-width: 768px) {
+  .nav {
+    position: relative;
+  }
+
+  .nav.open::after {
+    display: none;
+  }
+
+  .navContent {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background-color: transparent;
+    transform: none;
+    z-index: auto;
+  }
+
+  .toggleButton {
+    display: none;
+  }
+
+  .navList {
+    grid-template-columns: repeat(auto-fill, minmax(0, max-content));
+    height: 110px;
+  }
+
+  .navItem {
+    color: var(--color-dark-grayish-blue);
+    font-weight: 400;
+    height: 110px;
+    padding: 0 0.75rem;
+    display: grid;
+    place-items: center;
+  }
+
+  .navItem:hover {
+    color: var(--color-very-dark-grayish-blue);
+    box-shadow: 0 4px 0 0 var(--color-primary);
+  }
 }
