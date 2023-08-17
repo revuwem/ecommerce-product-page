@@ -19,13 +19,26 @@
 
 .current {
   position: relative;
-  height: 60vh;
-  margin-bottom: 1.5rem;
+  height: 40vh;
+}
+
+@media (min-width: 768px) {
+  .current {
+    height: 60vh;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .thumbnails {
   width: 100%;
   display: grid;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .thumbnails {
+    display: block;
+  }
 }
 
 .thumbnails :global(.swiper-wrapper) {
