@@ -1,10 +1,12 @@
 .header {
   position: relative;
-  min-height: 112px;
+  min-height: 68px;
+  padding: 0 1.5rem;
   display: grid;
   grid-template-columns: min-content 1fr min-content min-content;
+  grid-template-areas: "nav logo cart user";
   align-items: center;
-  gap: 48px;
+  gap: 1rem;
   padding-bottom: 3px;
 }
 
@@ -18,4 +20,28 @@
   height: 1px;
   background-color: var(--color-grayish-blue);
   opacity: 0.5;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.cart {
+  grid-area: cart;
+}
+
+.user {
+  grid-area: user;
+}
+
+@media (min-width: 768px) {
+  .header {
+    min-height: 112px;
+    grid-template-areas: "logo nav cart user";
+    gap: 3rem;
+  }
 }

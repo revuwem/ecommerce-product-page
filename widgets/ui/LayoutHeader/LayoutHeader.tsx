@@ -14,10 +14,12 @@ const LayoutHeader: React.FC<Props> = ({
   userProfileSlot,
 }) => (
   <header className={styles.header}>
-    <Image src="/images/logo.svg" alt="Sneakers" width={145} height={20} />
-    {navSlot}
-    {cartSlot}
-    {userProfileSlot}
+    <div className={styles.logo}>
+      <Image src="/images/logo.svg" alt="Sneakers" width={145} height={20} />
+    </div>
+    <div className={styles.nav}>{navSlot}</div>
+    <div className={styles.cart}>{cartSlot}</div>
+    <div className={styles.user}>{userProfileSlot}</div>
   </header>
 );
 
